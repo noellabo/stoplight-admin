@@ -118,7 +118,7 @@ module Sinatra
         ls    = lights
         stats = stat_params(ls)
 
-        haml :index, locals: stats.merge(lights: ls)
+        haml :index, locals: stats.merge(lights: ls), :escape_html => false
       end
 
       app.get '/stats' do
